@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./app/css/styles.css" rel="stylesheet">
+    <title>Búsqueda</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Tienda Online</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="cart.html">car</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="register.html">Registro</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle show" href="#" id="navbarDropdown2" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Categorías
+                            </a>
+                            <ul class="dropdown-menu show" aria-labelledby="navbarDropdown2" data-bs-popper="none"
+                                id="categories">
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <a href="search.html">
+                            <button class="btn btn-outline-success" type="button">Search</button>
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-5">
+        <br>
+
+        <div class="row row-cols-1 row-cols-md-3">
+
+            <div class="col mb-4">
+                <div class="card pointer">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN0cqGAlq0HYYaEyfjC0MNQhqll8AWlWh3ZA&usqp=CAU"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                            to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card pointer">
+                    <img src="https://mejorlaptop.com/wp-content/uploads/2021/01/mejores-laptops-HP-hewlett-packard.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card pointer">
+                    <img src="https://www.qempo.com.pe/blog/wp-content/uploads/2020/10/mejores-laptops-para-trabajar.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card pointer">
+                    <img src="https://s3.us-east-2.amazonaws.com/cc-prd-s3-uploads/2020/10/13/d0736712ed3e1c4df28229df54819529dfdfdc88.jpeg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- APP -->
+    <script type="module" src="./app/controllers/navbar.js"></script>
+
+</body>
+
+</html>
