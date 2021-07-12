@@ -37,7 +37,7 @@ class Server {
     middlewares() {
         this.#app.use(express.json());
         this.#app.use(express.urlencoded({ extended: true }));
-        this.#app.use(limiter);
+        // this.#app.use(limiter);
         this.#app.use(cors(corsOptions));
     }
 }

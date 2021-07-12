@@ -12,7 +12,7 @@ const corsOptions = {
 
 const limiter = rateLimit({
     windowsMs: 15 * 60 * 1000, // 15min
-    max: 10,
+    max: 1000,
     message: 'Excedió el limite de accesos a la API'
 });
 
