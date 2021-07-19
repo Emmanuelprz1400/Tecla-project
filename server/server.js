@@ -3,7 +3,11 @@ const cors = require('cors');
 
 const { productsRoutes } = require('../routes')
 
-const { limiter, corsOptions } = require('../middlewares')
+const { limiter, corsOptions } = require('../middlewares');
+const sequelize = require('../database/connection');
+
+const {v2: cloudinary} = require('cloudinary');
+const cloudinaryConfig = require('../cloudinary/config');
 
 class Server {
 
@@ -17,9 +21,11 @@ class Server {
 
     constructor() {
         this.#app = express();
-        this.#port = process.env.PORT || '3000';
-        this.#host = process.env.HOST || 'localhost';
+        this.#port = process.env.PORT;
+        this.#host = process.env.HOST;
 
+        this.dbConnection();
+        this.cloudinary();
         this.middlewares();
         this.routes();
     }
@@ -30,15 +36,30 @@ class Server {
         );
     }
 
+    async dbConnection() {
+        try {
+            await sequelize.authenticate();
+            console.log('Base de datos online');
+        } catch (err) {
+            throw new Error(err)
+        }
+    }
+
     routes() {
         this.#app.use(this.#apiPaths.products, productsRoutes);
+    }
+
+    cloudinary() {
+        cloudinaryConfig(cloudinary);
+        console.log('Conectado a cloudinary');
     }
 
     middlewares() {
         this.#app.use(express.json());
         this.#app.use(express.urlencoded({ extended: true }));
         // this.#app.use(limiter);
-        this.#app.use(cors(corsOptions));
+        // this.#app.use(cors(corsOptions));
+        this.#app.use(cors());
     }
 }
 

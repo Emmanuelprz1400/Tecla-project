@@ -1,14 +1,18 @@
 const {
-    getTrendsByCategory,
-    getCategories,
-    seachByName,
-    getRandomTrendProducts
+    getProducts,
+    getProduct,
+    getProductsByCategory,
+    postProduct,
+    putProduct,
+    deleteProduct
 }
     = require('./products')
 
 module.exports = {
-    getTrendsByCategory,
-    getCategories,
-    seachByName,
-    getRandomTrendProducts
+    getProducts,
+    getProduct,
+    getProductsByCategory,
+    postProduct,
+    putProduct,
+    deleteProduct
 }
