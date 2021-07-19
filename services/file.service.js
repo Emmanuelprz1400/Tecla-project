@@ -4,8 +4,8 @@ const {v2: cloudinary} = require('cloudinary');
 
 const postImg = async(img) => {
     const {tempFilePath} = img;
-    const {secureUrl} = await cloudinary.uploader.upload(tempFilePath, { folder: 'Ecommerce'})
-    return secureUrl;
+    const {secure_url} = await cloudinary.uploader.upload(tempFilePath, { folder: 'Ecommerce'});
+    return secure_url;
 }
 
 const putImg = async(req, res, product) => {

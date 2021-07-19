@@ -1,5 +1,6 @@
-const { uploadImg } = require("./file.service");
+const { postImg, uploadImg } = require("./file.service");
 
 module.exports = {
+    postImg,
     uploadImg
 }

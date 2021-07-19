@@ -38,8 +38,9 @@ const getProductsByCategory = async (req, res) => {
 }
 
 const postProduct = async (req, res) => {
-    const body = req;
-    const img = req.files.file;
+    const {body} = req;
+    //.img como se envia en el body del form
+    const img = req.files.img;
     try {
         const imgUrl = await postImg(img);
         const product = await Product.create({...body, img: imgUrl});
@@ -80,7 +81,7 @@ const putProduct = async (req, res) => {
 }
 
 const deleteProduct = async (req, res) => {
-    const {id } = req.params;
+    const { id } = req.params;
     try {
         const product = await Product.findByPk(id);
         if(!product) {

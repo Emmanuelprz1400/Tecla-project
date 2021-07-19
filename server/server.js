@@ -8,6 +8,7 @@ const sequelize = require('../database/connection');
 
 const {v2: cloudinary} = require('cloudinary');
 const cloudinaryConfig = require('../cloudinary/config');
+const fileUpload = require('express-fileupload');
 
 class Server {
 
@@ -60,6 +61,12 @@ class Server {
         // this.#app.use(limiter);
         // this.#app.use(cors(corsOptions));
         this.#app.use(cors());
+        this.#app.use(fileUpload({
+            useTempFiles: true,
+            tempFileDir: '/tmp/',
+            //Generar carpeta autumaticamente en caso de no existir
+            createParentPath: true
+        }))
     }
 }
 
